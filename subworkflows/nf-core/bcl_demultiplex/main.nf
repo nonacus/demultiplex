@@ -47,7 +47,6 @@ workflow BCL_DEMULTIPLEX {
         if (demultiplexer == "bclconvert") {
             BCLCONVERT( ch_flowcells )
             ch_fastq    = ch_fastq.mix(BCLCONVERT.out.fastq)
-            ch_interop  = ch_interop.mix(BCLCONVERT.out.interop)
             ch_reports  = ch_reports.mix(BCLCONVERT.out.reports)
             ch_versions = ch_versions.mix(BCLCONVERT.out.versions)
         }
